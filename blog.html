@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blog - JeaLua</title>
+        <link rel="stylesheet" href="styles/styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    </head>
+    <body id="top">
+        
+        <header class="encabezado">
+            <img src="img/logo.jpg" alt="Logo JeaLua" class="logo">
+        
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="menu.html" class="nav-link">Menú Completo</a></li>
+                    <li><a href="nuestrahistoria.html" class="nav-link">Nuestra Historia</a></li>
+                    <li><a href="blog.html" class="nav-link active">Blog</a></li>
+                    <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+                    <li><a href="comentarios.html" class="nav-link">Comentarios</a></li>
+                </ul>
+            </nav>
+            <div class="cart-box">
+                <a href="carrito.html"><img src="img/carrito.png" alt="Carrito" class="carrito"></a>
+                <span class="cart-count">0</span>
+            </div>
+        </header>
+
+        <main>
+            <div class="page-banner blog-banner-bg">
+                <div class="banner-text-content">
+                    <h1>Blog</h1>
+                    <p>
+                        Sírvete una taza y ponte al día con todas las historias, consejos y reflexiones inspiradas en el café que hemos preparado. 
+                        Desde análisis profundos de bebidas y reportajes locales hasta trucos de productividad y un ambiente acogedor, 
+                        aquí es donde nuestra comunidad viene a disfrutar, navegar y mantenerse inspirada.
+                    </p>
+                </div>
+            </div>
+
+            <section class="blog-grid-section">
+                <div class="blog-grid">
+
+                    <div class="blog-card">
+                        <div class="blog-img">
+                            <img src="img/h.jpg" alt="Cultura del café">
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-category">Cultura del café | Estilo de vida</span>
+                            <h2>La Cultura del Café en Nuestra Cafetería</h2>
+                            <p>En nuestra cafetería no solo servimos café: celebramos una tradición que lleva siglos enamorando al mundo...</p>
+                            <a href="#" class="read-more-btn" data-modal="modal1">Leer más →</a>
+                        </div>
+                    </div>
+
+                    <div class="blog-card">
+                        <div class="blog-img">
+                            <img src="img/menu/americano.jpg" alt="Postres">
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-category">Postres | Recetas dulces</span>
+                            <h2>Nuestros Deliciosos Postres Artesanales</h2>
+                            <p>Todo se hace aquí mismo, todos los días, con mantequilla de verdad, chocolate belga y frutas de temporada...</p>
+                            <a href="#" class="read-more-btn" data-modal="modal2">Leer más →</a>
+                        </div>
+                    </div>
+
+                    <div class="blog-card">
+                        <div class="blog-img">
+                            <img src="img/k.jpg" alt="Café en casa">
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-category">Consejos | Barista en casa</span>
+                            <h2>Cómo Preparar el Café Perfecto en Casa</h2>
+                            <p>¿Quieres que tu café matutino sepa igual que el nuestro? Te contamos los 7 secretos que usamos a diario...</p>
+                            <a href="#" class="read-more-btn" data-modal="modal3">Leer más →</a>
+                        </div>
+                    </div>
+
+                    <div class="blog-card">
+                        <div class="blog-img">
+                            <img src="img/postre2.jpg" alt="Eventos">
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-category">Eventos | Comunidad</span>
+                            <h2>Próximos Eventos y Catas 2025</h2>
+                            <p>Catas a ciegas, talleres de latte art, noches de maridaje con chocolate y mucho más...</p>
+                            <a href="#" class="read-more-btn" data-modal="modal4">Leer más →</a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+
+        <div id="modal1" class="modal-overlay">
+            <div class="modal-box">
+                <span class="close-modal">&times;</span>
+                <h2>La Cultura del Café en Nuestra Cafetería</h2>
+                <div class="modal-body">
+                    <p>En <strong>JeaLua</strong> no vendemos solo café: vivimos una pasión que empezó hace más de 8 años cuando decidimos tostar nuestros propios granos.</p>
+                    <p>Cada mañana seleccionamos a mano los mejores lotes. Los tostamos en pequeños batches para resaltar sus notas a chocolate, frutos rojos o jazmín según la variedad.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal2" class="modal-overlay">
+            <div class="modal-box">
+                <span class="close-modal">&times;</span>
+                <h2>Nuestros Deliciosos Postres Artesanales</h2>
+                <div class="modal-body">
+                    <p>Todos los días, desde las 6 de la mañana, nuestro equipo de pastelería prepara todo desde cero: croissants hojaldrados, brownies con nueces pecanas, carrot cake húmedo y nuestro famoso cheesecake.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal3" class="modal-overlay">
+            <div class="modal-box">
+                <span class="close-modal">&times;</span>
+                <h2>Cómo Preparar el Café Perfecto en Casa</h2>
+                <div class="modal-body">
+                    <ul>
+                        <li><strong>Agua filtrada</strong> a 92–94 °C.</li>
+                        <li>Molienda media-fina recién hecha.</li>
+                        <li>18 g de café por cada 300 ml de agua.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal4" class="modal-overlay">
+            <div class="modal-box">
+                <span class="close-modal">&times;</span>
+                <h2>Próximos Eventos y Catas – Agenda 2025</h2>
+                <div class="modal-body">
+                    <ul>
+                        <li><strong>13 diciembre</strong> – Cata navideña.</li>
+                        <li><strong>18 enero</strong> – Taller de Latte Art.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <footer class="site-footer">
+                <a href="#top" class="back-to-top" aria-label="Volver al inicio">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+                </a>
+                <div class="footer-content">
+                    <div class="footer-col logo-col">
+                        <div class="footer-logo-box">
+                            <img src="img/logo.jpg" alt="Logo JeaLua" class="footer-logo-img">
+                        </div>
+                    </div>
+                    <div class="footer-col info-col">
+                        <h3>Ubicación</h3>
+                        <p class="address">
+                            <span class="icon-pin">📍</span> Jealua - Av. Libertad<br>
+                            401, Chiclayo 14001,<br>
+                            Perú
+                        </p>
+                        <div class="footer-socials">
+                            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.585-.069 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.26-.148-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.85s.012-3.585.07-4.85c.148-3.204 1.671-4.771 4.919-4.919 1.266-.057 1.645-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.36-.2 6.78-2.618 6.98-6.98.058-1.281.072-1.689.072-4.948 0-3.259-.014-3.667-.072-4.947-.2-4.36-2.618-6.78-6.98-6.98-1.28-.058-1.689-.072-4.947-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg></a>
+                            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg></a>
+                            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+                        </div>
+                    </div>
+                    <div class="footer-col links-col">
+                        <h3>Inicio</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Nuestra Historia</a></li>
+                            <li><a href="#">Misión</a></li>
+                            <li><a href="#">Visión</a></li>
+                            <li><a href="#">Valores</a></li>
+                            <li><a href="#">Reservar</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col links-col">
+                        <h3>Realizar pedido en línea</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Menú completo</a></li>
+                            <li><a href="#">Sobre Nosotros</a></li>
+                            <li><a href="#">Contacto</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>
+                        &copy;2025. Jealua. Todos los derechos reservados. Cualquier duplicación no autorizada del contenido aquí incluido resultará en acciones legales. Política de privacidad | Condiciones de uso | Política de reembolso.
+                    </p>
+                </div>
+            </footer>
+
+        <script src="scripts/script.js"></script>
+    </body>
+</html>
