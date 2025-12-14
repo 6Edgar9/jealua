@@ -3,156 +3,88 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Blog - JeaLua</title>
-        <link rel="stylesheet" href="styles/styles.css">
+        <title>Cremolada de Fruta - JeaLua</title>
+        <link rel="stylesheet" href="../styles/styles.css">
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     </head>
     <body id="top">
-        
         <header class="encabezado">
-            <a href="index.html" class="logo-link">
-                <img src="img/logo.jpg" alt="Logo JeaLua" class="logo">
-            </a>
-        
+            <a href="../index.html"><img src="../img/logo.jpg" alt="Logo JeaLua" class="logo"></a>
             <nav class="navbar">
                 <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link">Inicio</a></li>
-                    <li><a href="menu.html" class="nav-link">Menú Completo</a></li>
-                    <li><a href="nuestrahistoria.html" class="nav-link">Nuestra Historia</a></li>
-                    <li><a href="blog.html" class="nav-link active">Blog</a></li>
-                    <li><a href="contacto.html" class="nav-link">Contacto</a></li>
-                    <li><a href="comentarios.html" class="nav-link">Comentarios</a></li>
+                    <li><a href="../index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="../menu.html" class="nav-link active">Menú Completo</a></li>
+                    <li><a href="../nuestrahistoria.html" class="nav-link">Nuestra Historia</a></li>
+                    <li><a href="../blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="../comentarios.html" class="nav-link">Comentarios</a></li>
+                    <li><a href="../contacto.html" class="nav-link">Contacto</a></li>
                 </ul>
             </nav>
             <div class="header-icons">
                 <div class="cart-box">
-                    <a href="carrito.html">
-                        <img src="img/carrito.png" alt="Carrito" class="carrito">
+                    <a href="../carrito.html">
+                        <img src="../img/carrito.png" alt="Carrito" class="carrito">
                         <span class="cart-count">0</span>
                     </a>
                 </div>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
+                <div class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
             </div>
         </header>
 
-        <main>
-            <div class="page-banner blog-banner-bg">
-                <div class="banner-text-content">
-                    <h1>Blog</h1>
-                    <p>
-                        Sírvete una taza y ponte al día con todas las historias, consejos y reflexiones inspiradas en el café que hemos preparado. 
-                        Desde análisis profundos de bebidas y reportajes locales hasta trucos de productividad y un ambiente acogedor, 
-                        aquí es donde nuestra comunidad viene a disfrutar, navegar y mantenerse inspirada.
-                    </p>
+        <main class="single-product-main">
+            <div class="container-producto">
+                <div class="breadcrumbs">
+                    <a href="../index.html">Inicio</a> / <a href="../menu.html">Postres Fríos</a> / <span>Cremolada</span>
+                </div>
+
+                <div class="product-layout">
+                    <div class="product-image-col">
+                        <div class="simple-frame big-frame">
+                            <img src="../img/menu/cremolada-fresa.jpeg" alt="Cremolada de Fruta" class="product-img-full">
+                        </div>
+                    </div>
+
+                    <div class="product-info-col">
+                        <h1 class="product-title">Cremolada de Fruta</h1>
+                        <div class="product-description">
+                            <p>Refrescante y deliciosa. Hecha con pulpa de fruta 100% natural y hielo triturado finamente para una textura suave. Disponible en sabores de temporada.</p>
+                        </div>
+
+                        <div class="product-options">
+                            <label for="size-select">Sabor</label>
+                            <select id="size-select" class="form-select">
+                                <option value="Fresa" 
+                                        data-price="10.00" 
+                                        data-image="../img/menu/cremolada-fresa.jpeg">
+                                        Fresa
+                                </option>
+                                
+                                <option value="Maracuyá" 
+                                        data-price="10.00" 
+                                        data-image="../img/menu/cremolada-maracuya.jpg">
+                                        Maracuyá
+                                </option>
+                                
+                                <option value="Mango" 
+                                        data-price="10.00" 
+                                        data-image="../img/menu/cremolada-mango.jpg">
+                                        Mango
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="product-price-row">
+                            <span class="price-large" id="display-price">S/. 10.00</span>
+                            <div class="quantity-box">
+                                <input type="number" value="1" min="1" class="qty-input">
+                            </div>
+                        </div>
+
+                        <button class="btn-add-cart">Agregar al carrito +</button>
+                    </div>
                 </div>
             </div>
-
-            <section class="blog-grid-section">
-                <div class="blog-grid">
-
-                    <div class="blog-card">
-                        <div class="blog-img">
-                            <img src="img/h.jpg" alt="Cultura del café">
-                        </div>
-                        <div class="blog-content">
-                            <span class="blog-category">Cultura del café | Estilo de vida</span>
-                            <h2>La Cultura del Café en Nuestra Cafetería</h2>
-                            <p>En nuestra cafetería no solo servimos café: celebramos una tradición que lleva siglos enamorando al mundo...</p>
-                            <a href="#" class="read-more-btn" data-modal="modal1">Leer más →</a>
-                        </div>
-                    </div>
-
-                    <div class="blog-card">
-                        <div class="blog-img">
-                            <img src="img/menu/americano.jpg" alt="Postres">
-                        </div>
-                        <div class="blog-content">
-                            <span class="blog-category">Postres | Recetas dulces</span>
-                            <h2>Nuestros Deliciosos Postres Artesanales</h2>
-                            <p>Todo se hace aquí mismo, todos los días, con mantequilla de verdad, chocolate belga y frutas de temporada...</p>
-                            <a href="#" class="read-more-btn" data-modal="modal2">Leer más →</a>
-                        </div>
-                    </div>
-
-                    <div class="blog-card">
-                        <div class="blog-img">
-                            <img src="img/k.jpg" alt="Café en casa">
-                        </div>
-                        <div class="blog-content">
-                            <span class="blog-category">Consejos | Barista en casa</span>
-                            <h2>Cómo Preparar el Café Perfecto en Casa</h2>
-                            <p>¿Quieres que tu café matutino sepa igual que el nuestro? Te contamos los 7 secretos que usamos a diario...</p>
-                            <a href="#" class="read-more-btn" data-modal="modal3">Leer más →</a>
-                        </div>
-                    </div>
-
-                    <div class="blog-card">
-                        <div class="blog-img">
-                            <img src="img/postre2.jpg" alt="Eventos">
-                        </div>
-                        <div class="blog-content">
-                            <span class="blog-category">Eventos | Comunidad</span>
-                            <h2>Próximos Eventos y Catas 2025</h2>
-                            <p>Catas a ciegas, talleres de latte art, noches de maridaje con chocolate y mucho más...</p>
-                            <a href="#" class="read-more-btn" data-modal="modal4">Leer más →</a>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
         </main>
-
-        <div id="modal1" class="modal-overlay">
-            <div class="modal-box">
-                <span class="close-modal">&times;</span>
-                <h2>La Cultura del Café en Nuestra Cafetería</h2>
-                <div class="modal-body">
-                    <p>En <strong>JeaLua</strong> no vendemos solo café: vivimos una pasión que empezó hace más de 8 años cuando decidimos tostar nuestros propios granos.</p>
-                    <p>Cada mañana seleccionamos a mano los mejores lotes. Los tostamos en pequeños batches para resaltar sus notas a chocolate, frutos rojos o jazmín según la variedad.</p>
-                </div>
-            </div>
-        </div>
-
-        <div id="modal2" class="modal-overlay">
-            <div class="modal-box">
-                <span class="close-modal">&times;</span>
-                <h2>Nuestros Deliciosos Postres Artesanales</h2>
-                <div class="modal-body">
-                    <p>Todos los días, desde las 6 de la mañana, nuestro equipo de pastelería prepara todo desde cero: croissants hojaldrados, brownies con nueces pecanas, carrot cake húmedo y nuestro famoso cheesecake.</p>
-                </div>
-            </div>
-        </div>
-
-        <div id="modal3" class="modal-overlay">
-            <div class="modal-box">
-                <span class="close-modal">&times;</span>
-                <h2>Cómo Preparar el Café Perfecto en Casa</h2>
-                <div class="modal-body">
-                    <ul>
-                        <li><strong>Agua filtrada</strong> a 92–94 °C.</li>
-                        <li>Molienda media-fina recién hecha.</li>
-                        <li>18 g de café por cada 300 ml de agua.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div id="modal4" class="modal-overlay">
-            <div class="modal-box">
-                <span class="close-modal">&times;</span>
-                <h2>Próximos Eventos y Catas – Agenda 2025</h2>
-                <div class="modal-body">
-                    <ul>
-                        <li><strong>13 diciembre</strong> – Cata navideña.</li>
-                        <li><strong>18 enero</strong> – Taller de Latte Art.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
 
         <footer class="site-footer">
                 <a href="#top" class="back-to-top" aria-label="Volver al inicio">
@@ -162,7 +94,7 @@
                 <div class="footer-content">
                     <div class="footer-col logo-col">
                         <div class="footer-logo-box">
-                            <img src="img/logo.jpg" alt="Logo JeaLua" class="footer-logo-img">
+                            <img src="../img/logo.jpg" alt="Logo JeaLua" class="footer-logo-img">
                         </div>
                     </div>
 
@@ -216,7 +148,6 @@
                     </p>
                 </div>
             </footer>
-
-        <script src="scripts/script.js"></script>
+        <script src="../scripts/script.js"></script>
     </body>
 </html>

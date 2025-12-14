@@ -116,16 +116,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const sizeSelect = document.getElementById('size-select');
     const priceDisplay = document.getElementById('display-price');
 
-    // A. Cambio de Precio visual
+    // A. Cambio de Precio visual E IMAGEN
     if (sizeSelect && priceDisplay) {
+        const mainImageEl = document.querySelector('.product-img-full'); // Seleccionamos la imagen principal
+
         sizeSelect.addEventListener('change', function() {
+            // 1. Obtener datos de la opción seleccionada
             const selectedOption = this.options[this.selectedIndex];
             const newPrice = selectedOption.getAttribute('data-price');
+            const newImage = selectedOption.getAttribute('data-image'); // Obtenemos la ruta de la nueva imagen
             
+            // 2. Actualizar Precio
             if (newPrice) {
                 priceDisplay.textContent = 'S/. ' + parseFloat(newPrice).toFixed(2);
                 priceDisplay.style.color = '#7D89D1';
                 setTimeout(() => priceDisplay.style.color = '', 300);
+            }
+
+            // 3. Actualizar Imagen (Con un pequeño efecto de parpadeo suave)
+            if (newImage && mainImageEl) {
+                mainImageEl.style.opacity = '0.6'; // Bajar opacidad
+                setTimeout(() => {
+                    mainImageEl.src = newImage; // Cambiar la fuente de la imagen
+                    mainImageEl.style.opacity = '1'; // Restaurar opacidad
+                }, 200);
             }
         });
     }
@@ -443,9 +457,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ========================================================================
-    // 5. SISTEMA DE COMENTARIOS Y CALIFICACIÓN (Con Validación)
+    // 5. LÓGICA DE COMENTARIOS Y CONTACTO (Integración)
     // ========================================================================
     
+    // 1. Cargar base de datos de comentarios (Común para ambas páginas)
+    let reviews = JSON.parse(localStorage.getItem('jealuaReviews')) || [];
+    
+    // Si está vacío, cargamos datos de prueba para que se vea bonito
+    if (reviews.length === 0) {
+        reviews = [
+            { name: "Maria L.", rating: 5, text: "¡El mejor café de Chiclayo! El ambiente es increíble.", date: "10/12/2025" },
+            { name: "Carlos R.", rating: 5, text: "La atención 10/10. Muy recomendado.", date: "11/12/2025" }
+        ];
+        localStorage.setItem('jealuaReviews', JSON.stringify(reviews));
+    }
+
+    // --- A. PÁGINA DE CONTACTO (Actualizar el contador "Según X Comentarios") ---
+    const contactReviewCountEl = document.getElementById('contact-total-reviews');
+    if (contactReviewCountEl) {
+        contactReviewCountEl.textContent = reviews.length;
+    }
+
+    // --- B. PÁGINA DE COMENTARIOS (Formulario y Lista) ---
     const reviewForm = document.getElementById('reviewForm');
     
     if (reviewForm) {
@@ -453,30 +486,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const avgScoreEl = document.getElementById('average-score');
         const avgStarsEl = document.getElementById('average-stars');
         const totalReviewsEl = document.getElementById('total-reviews');
+        
         const starInputs = document.querySelectorAll('.star-rating-input i');
         const ratingValueInput = document.getElementById('rating-value');
         
-        // Elementos para validación
+        // Elementos de validación
         const nameInput = document.getElementById('reviewer-name');
         const textInput = document.getElementById('reviewer-text');
         const errorMsg = document.getElementById('review-error');
 
-        // 1. Cargar comentarios guardados
-        let reviews = JSON.parse(localStorage.getItem('jealuaReviews')) || [];
-        
-        // Datos de ejemplo si está vacío
-        if (reviews.length === 0) {
-            reviews = [
-                { name: "Maria L.", rating: 5, text: "¡El mejor café de Chiclayo! El ambiente es increíble.", date: new Date().toLocaleDateString() },
-                { name: "Carlos R.", rating: 5, text: "La atención 10/10. Muy recomendado.", date: new Date().toLocaleDateString() }
-            ];
-            localStorage.setItem('jealuaReviews', JSON.stringify(reviews));
-        }
-
+        // Inicializar vista
         renderReviews();
         updateAverage();
 
-        // 2. Lógica de Estrellas (Visual)
+        // Lógica Visual de Estrellas (Click)
         starInputs.forEach(star => {
             star.addEventListener('click', function() {
                 const value = this.getAttribute('data-value');
@@ -496,13 +519,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }
-        updateStarVisuals(5); // Iniciar en 5
+        updateStarVisuals(5); // Empezar con 5 estrellas marcadas
 
-        // 3. Publicar Nuevo Comentario (CON VALIDACIÓN)
+        // Envío del Formulario
         reviewForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // a) Limpiar errores previos
+            // Limpiar estilos de error
             errorMsg.style.display = 'none';
             nameInput.style.borderBottomColor = '#ccc';
             textInput.style.borderBottomColor = '#ccc';
@@ -511,24 +534,23 @@ document.addEventListener('DOMContentLoaded', () => {
             const textVal = textInput.value.trim();
             const ratingVal = parseInt(ratingValueInput.value);
 
-            // b) Validar campos vacíos
+            // Validación
             let isValid = true;
-
             if (nameVal === '') {
-                nameInput.style.borderBottomColor = '#d9534f'; // Rojo
+                nameInput.style.borderBottomColor = '#d9534f';
                 isValid = false;
             }
             if (textVal === '') {
-                textInput.style.borderBottomColor = '#d9534f'; // Rojo
+                textInput.style.borderBottomColor = '#d9534f';
                 isValid = false;
             }
 
             if (!isValid) {
-                errorMsg.style.display = 'block'; // Mostrar mensaje de error
-                return; // Detener envío
+                errorMsg.style.display = 'block';
+                return;
             }
 
-            // c) Si todo está bien, guardar
+            // Guardar
             const newReview = { 
                 name: nameVal, 
                 rating: ratingVal, 
@@ -536,19 +558,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 date: new Date().toLocaleDateString() 
             };
             
-            reviews.unshift(newReview); // Añadir al principio
+            reviews.unshift(newReview); // Agregar al inicio
             localStorage.setItem('jealuaReviews', JSON.stringify(reviews));
             
+            // Actualizar vista
             renderReviews();
             updateAverage();
             
-            // Resetear
+            // Resetear form
             reviewForm.reset();
             updateStarVisuals(5);
             alert("¡Gracias por tu comentario!");
         });
 
-        // 4. Renderizar
+        // Funciones de Renderizado
         function renderReviews() {
             reviewsFeed.innerHTML = '';
             reviews.forEach(r => {
@@ -576,15 +599,35 @@ document.addEventListener('DOMContentLoaded', () => {
             const sum = reviews.reduce((acc, curr) => acc + curr.rating, 0);
             const avg = (sum / reviews.length).toFixed(1);
             
-            avgScoreEl.textContent = avg;
-            totalReviewsEl.textContent = reviews.length;
+            if(avgScoreEl) avgScoreEl.textContent = avg;
+            if(totalReviewsEl) totalReviewsEl.textContent = reviews.length;
 
             let starsHtml = '';
             for(let i=1; i<=5; i++) {
                 if (i <= Math.round(avg)) starsHtml += '<i class="fas fa-star"></i>';
                 else starsHtml += '<i class="far fa-star" style="color:#ccc"></i>';
             }
-            avgStarsEl.innerHTML = starsHtml;
+            if(avgStarsEl) avgStarsEl.innerHTML = starsHtml;
         }
+    }
+
+    // ========================================================================
+    // 7. MENÚ HAMBURGUESA (MÓVIL)
+    // ========================================================================
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+
+    if (hamburger && navMenu) {
+        hamburger.addEventListener("click", () => {
+            // Alternar clase 'active' en el botón y el menú
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        });
+
+        // Cerrar el menú al hacer clic en un enlace
+        document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }));
     }
 });

@@ -1,16 +1,17 @@
 /* ÍNDICE DE ESTILOS - JEALUA
    ================================
-   1.  Variables Globales (:root)
-   2.  Reset y Estilos Base
-   3.  Encabezado (Header) y Navegación
-   4.  Hero Section (Principal)
-   5.  Sección Destacada (Featured)
-   6.  Sabor en Casa
-   7.  Dedicación
-   8.  Comunidad (Video)
-   9.  Renovado
-   10. Pie de Página (Footer)
-   11. Responsive Design (Media Queries)
+   1.  Variables Globales y Reset
+   2.  Encabezado (Header) y Navegación
+   3.  Página: INICIO (Hero, Destacados, etc.)
+   4.  Pie de Página (Footer)
+   5.  Página: MENÚ COMPLETO
+   6.  Página: DETALLE DE PRODUCTO
+   7.  Página: NUESTRA HISTORIA
+   8.  Página: BLOG
+   9.  Página: CONTACTO
+   10. Página: CARRITO
+   11. Página: COMENTARIOS
+   12. Responsive Design General
 */
 
 /* --- Variables para colores --- */
@@ -2211,3 +2212,518 @@ select.orderby {
     font-size: 0.8rem;
     color: #999;
 }
+
+
+/* =========================================
+   12. RESPONSIVE DESIGN (Móviles y Tablets)
+   ========================================= */
+
+/* Breakpoint para Tablets y Móviles (Menos de 991px) */
+@media (max-width: 991px) {
+    
+    /* --- 1. AJUSTES GENERALES --- */
+    .encabezado {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 5%;
+        text-align: center;
+    }
+
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        padding: 0;
+    }
+
+    .nav-menu li {
+        border-right: none; /* Quitamos las líneas divisorias */
+        padding: 0 5px;
+    }
+
+    /* Reducir tamaño de títulos gigantes */
+    .hero-text h1, 
+    .featured-text h2, 
+    .page-banner h1,
+    .contact-intro h2 {
+        font-size: 2.2rem;
+    }
+
+    /* --- 2. INICIO (Home) --- */
+    .hero-section {
+        flex-direction: column;
+        padding: 40px 5% 0 5%;
+        min-height: auto;
+        text-align: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .hero-img {
+        justify-content: center;
+    }
+
+    /* Convertir todas las secciones Zig-Zag (Texto-Imagen) en Columna */
+    .featured-container,
+    .flavor-container,
+    .dedication-container,
+    .community-container,
+    .renovated-container {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+
+    /* Reordenar para que la imagen quede arriba del texto en móviles si se desea */
+    .flavor-container { flex-direction: column-reverse; } 
+    
+    .featured-text, .flavor-text, .dedication-text, .community-text, .renovated-text {
+        max-width: 100%;
+    }
+
+    /* Centrar textos descriptivos para mejor lectura en móvil */
+    .featured-text p, .dedication-text p, .renovated-text p {
+        text-align: center; 
+    }
+
+    .featured-card-wrapper, 
+    .flavor-image-box, 
+    .dedication-image-box, 
+    .community-image-box, 
+    .renovated-image-box {
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* --- 3. MENÚ Y PRODUCTOS --- */
+    .page-banner {
+        height: 180px;
+        justify-content: center;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .shop-toolbar {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .product-layout {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .product-price-action {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .btn-add-cart {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* --- 4. NUESTRA HISTORIA --- */
+    .split-container {
+        flex-direction: column;
+    }
+    .double-image-box {
+        flex-direction: column;
+    }
+    .tall-frame {
+        height: 300px;
+    }
+
+    /* --- 5. PÁGINA CONTACTO (ARREGLO DE TARJETA FLOTANTE) --- */
+    /* Quitamos el margen inferior gigante */
+    .contact-intro {
+        padding-bottom: 60px; 
+    }
+
+    /* Eliminamos los márgenes negativos que superponen las cajas */
+    .floating-card-wrapper {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0 5%;
+    }
+
+    .contact-card-container {
+        flex-direction: column;
+        box-shadow: none; /* Quitamos sombra al contenedor padre */
+    }
+
+    /* Caja Oscura */
+    .card-dark {
+        width: 100%;
+        padding: 40px 20px;
+    }
+
+    /* Caja Blanca */
+    .card-white {
+        width: 100%;
+        padding: 40px 20px;
+        margin: 0; /* Quitamos el desfase */
+        border: 1px solid #eee;
+        box-shadow: none;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .form-group.half {
+        width: 100%;
+    }
+
+    .map-section {
+        padding-top: 0;
+        margin-top: 40px;
+    }
+
+    /* --- 6. PÁGINA CARRITO (SOLUCIÓN TABLA) --- */
+    .cart-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .cart-table-wrapper {
+        width: 100%;
+        /* Habilita scroll horizontal si la tabla es muy ancha para el celular */
+        overflow-x: auto; 
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .cart-table {
+        /* Asegura un ancho mínimo para que las columnas no se aplasten */
+        min-width: 600px; 
+    }
+
+    .cart-totals-box {
+        width: 100%;
+        padding: 30px 20px;
+    }
+
+    /* --- 7. PÁGINA COMENTARIOS --- */
+    .reviews-container {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .review-form-box {
+        width: 100%;
+        /* Quitamos sticky porque ocupa mucho espacio en móvil */
+        position: static; 
+    }
+
+    .reviews-list-box {
+        width: 100%;
+        border-left: none;
+        padding-left: 0;
+        border-top: 1px solid #eee; /* Cambiamos borde vertical por horizontal */
+        padding-top: 40px;
+    }
+
+    /* --- 8. FOOTER --- */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .footer-logo-box {
+        display: inline-block;
+    }
+
+    .footer-socials {
+        justify-content: center;
+    }
+    
+    .back-to-top {
+        right: 20px; /* Más cerca del borde en móvil */
+        width: 40px; 
+        height: 40px;
+    }
+}
+
+/* Ajustes para móviles muy pequeños (iPhone SE, etc) */
+@media (max-width: 480px) {
+    .page-banner h1 { font-size: 2rem; }
+    .big-score { font-size: 2.5rem; }
+    
+    /* Botones ancho completo para facilitar el toque */
+    .btn, .btn-dark, .btn-brown, .btn-dark-form, .btn-dark-review {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* =========================================
+   ESTILOS DEL MENÚ HAMBURGUESA (Globales)
+   ========================================= */
+
+/* Contenedor de Iconos (Carrito + Hamburguesa) */
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Botón Hamburguesa (Oculto en PC) */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    z-index: 1001; /* Encima del menú desplegable */
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: #333;
+}
+
+/* =========================================
+   12. RESPONSIVE DESIGN (Móviles y Tablets)
+   ========================================= */
+
+@media (max-width: 991px) {
+    
+    /* --- 1. HEADER & MENÚ HAMBURGUESA --- */
+    .encabezado {
+        flex-direction: row; /* Mantiene la línea horizontal */
+        justify-content: space-between; /* Logo a izq, iconos a der */
+        align-items: center;
+        padding: 15px 5%;
+    }
+
+    .hamburger {
+        display: block; /* Aparece el botón */
+    }
+
+    /* Menú Desplegable */
+    .nav-menu {
+        position: fixed;
+        left: -100%; /* Oculto fuera de pantalla */
+        top: 80px;   /* Altura del header aprox */
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+        padding: 20px 0;
+        gap: 0;
+        z-index: 999;
+    }
+
+    .nav-menu.active {
+        left: 0; /* Entra en pantalla */
+    }
+
+    .nav-menu li {
+        margin: 15px 0;
+        border: none;
+        padding: 0;
+    }
+
+    .nav-menu li a {
+        font-size: 1.2rem; /* Más grande para tocar */
+    }
+
+    /* Animación de Hamburguesa a X */
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    /* --- 2. AJUSTES DE TEXTO --- */
+    .hero-text h1, 
+    .featured-text h2, 
+    .page-banner h1,
+    .contact-intro h2 {
+        font-size: 2.2rem;
+    }
+
+    /* --- 3. INICIO (Home) --- */
+    .hero-section {
+        flex-direction: column;
+        padding: 40px 5% 0 5%;
+        text-align: center;
+        min-height: auto;
+    }
+
+    .hero-text { margin-bottom: 40px; max-width: 100%; }
+    .buttons, .hero-img { justify-content: center; }
+
+    /* Secciones en Columna */
+    .featured-container,
+    .flavor-container,
+    .dedication-container,
+    .community-container,
+    .renovated-container {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .flavor-container { flex-direction: column-reverse; } /* Imagen arriba */
+    
+    .featured-text, .flavor-text, .dedication-text, .community-text, .renovated-text {
+        max-width: 100%;
+    }
+
+    .featured-text p, .dedication-text p, .renovated-text p {
+        text-align: center; 
+    }
+
+    .featured-card-wrapper, .flavor-image-box, .dedication-image-box, .community-image-box, .renovated-image-box {
+        justify-content: center; width: 100%;
+    }
+
+    /* --- 4. MENÚ Y PRODUCTOS --- */
+    .page-banner {
+        height: 180px;
+        justify-content: center;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .shop-toolbar {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .product-layout {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .product-price-action {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .btn-add-cart { width: 100%; max-width: 100%; }
+
+    /* --- 5. HISTORIA --- */
+    .split-container, .double-image-box { flex-direction: column; }
+    .tall-frame { height: 300px; }
+
+    /* --- 6. CONTACTO (Tarjeta Flotante Arreglada) --- */
+    .contact-intro { padding-bottom: 60px; }
+    .floating-card-wrapper { margin: 0; padding: 0 5%; }
+    .contact-card-container { flex-direction: column; box-shadow: none; }
+    
+    .card-dark { width: 100%; padding: 40px 20px; }
+    .card-white { width: 100%; padding: 40px 20px; margin: 0; border: 1px solid #eee; box-shadow: none; }
+    
+    .form-row { flex-direction: column; gap: 0; }
+    .form-group.half { width: 100%; }
+    .map-section { margin-top: 40px; padding-top: 0; }
+
+    /* --- 7. CARRITO (Scroll Horizontal) --- */
+    /* --- 6. PÁGINA CARRITO (OPTIMIZADA PARA MÓVIL) --- */
+    .cart-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .cart-table-wrapper {
+        width: 100%;
+        /* Permite deslizar si la tabla es muy ancha */
+        overflow-x: auto; 
+        -webkit-overflow-scrolling: touch;
+        /* Sombra sutil a la derecha para indicar que hay más contenido */
+        background:
+            linear-gradient(to right, white 30%, rgba(255,255,255,0)),
+            linear-gradient(to right, rgba(255,255,255,0), white 70%) 0 100%,
+            radial-gradient(farthest-side at 0 50%, rgba(0,0,0,.2), rgba(0,0,0,0)),
+            radial-gradient(farthest-side at 100% 50%, rgba(0,0,0,.2), rgba(0,0,0,0)) 0 100%;
+        background-repeat: no-repeat;
+        background-color: white;
+        background-size: 40px 100%, 40px 100%, 14px 100%, 14px 100%;
+        background-position: 0 0, 100% 0, 0 0, 100% 0;
+        background-attachment: local, local, scroll, scroll;
+    }
+
+    .cart-table {
+        /* Reducimos el ancho mínimo para intentar que quepa en pantallas grandes de móvil */
+        min-width: 500px; 
+        border-collapse: collapse;
+    }
+
+    /* Reducir espacio interno de las celdas */
+    .cart-table th, 
+    .cart-table td {
+        padding: 10px 5px; /* Menos relleno */
+        font-size: 0.85rem; /* Letra un poco más pequeña */
+    }
+
+    /* Ajustar la columna del nombre e imagen */
+    .cart-table td.product-name-col {
+        min-width: 120px;
+    }
+    
+    .product-name-col img {
+        width: 35px !important; /* Imagen más pequeña en móvil */
+        height: 35px !important;
+        margin-right: 5px;
+    }
+
+    /* Ajustar columna de cantidad */
+    .qty-btn-group button {
+        padding: 2px 8px; /* Botones +/- más compactos */
+    }
+    .qty-btn-group span {
+        padding: 2px 8px;
+    }
+
+    /* --- BOTÓN ELIMINAR (Hacerlo visible) --- */
+    .cart-table td:last-child {
+        text-align: center;
+        width: 40px;
+    }
+
+    .btn-remove {
+        font-size: 1.2rem !important;
+        padding: 5px;
+        color: #e74c3c;
+        display: block; /* Asegura que ocupe espacio */
+        margin: 0 auto;
+    }
+
+    .cart-totals-box {
+        width: 100%;
+        padding: 25px 15px;
+    }
+
+    /* --- 8. COMENTARIOS --- */
+    .reviews-container { flex-direction: column; gap: 50px; }
+    .review-form-box { width: 100%; position: static; }
+    .reviews-list-box { width: 100%; border-left: none; padding-left: 0; border-top: 1px solid #eee; padding-top: 40px; }
+
+    /* --- 9. FOOTER --- */
+    .footer-content { flex-direction: column; text-align: center; gap: 30px; }
+    .footer-logo-box { display: inline-block; }
+    .footer-socials { justify-content: center; }
+    .back-to-top { right: 20px; width: 40px; height: 40px; }
+}
+
+/* Ajustes Extra Pequeños */
+@media (max-width: 480px) {
+    .page-banner h1 { font-size: 2rem; }
+    .big-score { font-size: 2.5rem; }
+    .btn, .btn-dark, .btn-brown, .btn-dark-form, .btn-dark-review { width: 100%; text-align: center; }
+}
+

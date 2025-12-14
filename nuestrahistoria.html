@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestra Historia - JeaLua</title>
-    <link rel="stylesheet" href="styles/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-</head>
-<body id="top">
-    
-    <header class="encabezado">
-            <img src="img/logo.jpg" alt="Logo JeaLua" class="logo">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nuestra Historia - JeaLua</title>
+        <link rel="stylesheet" href="styles/styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    </head>
+    <body id="top">
         
-            <nav>
+        <header class="encabezado">
+            <a href="index.html" class="logo-link">
+                <img src="img/logo.jpg" alt="Logo JeaLua" class="logo">
+            </a>
+        
+            <nav class="navbar">
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link">Inicio</a></li>
                     <li><a href="menu.html" class="nav-link">Menú Completo</a></li>
@@ -22,184 +24,192 @@
                     <li><a href="comentarios.html" class="nav-link">Comentarios</a></li>
                 </ul>
             </nav>
-            <div class="cart-box">
-                <a href="carrito.html"><img src="img/carrito.png" alt="Carrito" class="carrito"></a>
-                <span class="cart-count">0</span>
+            <div class="header-icons">
+                <div class="cart-box">
+                    <a href="carrito.html">
+                        <img src="img/carrito.png" alt="Carrito" class="carrito">
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </div>
         </header>
 
-    <main>
-        <div class="history-hero">
-            <h1>Nuestra Historia</h1>
-        </div>
-
-        <nav class="history-nav">
-            <ul>
-                <li><a href="#sobre-nosotros" class="h-link active">Sobre Nosotros</a></li>
-                <li><a href="#mision" class="h-link">Nuestra Misión</a></li>
-                <li><a href="#proposito" class="h-link">Nuestro Propósito</a></li>
-                <li><a href="#vision" class="h-link">Nuestra Visión</a></li>
-                <li><a href="#valores" class="h-link">Nuestros Valores</a></li>
-            </ul>
-        </nav>
-
-        <section id="sobre-nosotros" class="section-block bg-white">
-            <div class="split-container">
-                <div class="double-image-box">
-                    <div class="tall-frame">
-                        <img src="img/historia/foto1.jpg" alt="Local antiguo">
-                    </div>
-                    <div class="tall-frame">
-                        <img src="img/historia/foto2.png" alt="Local actual">
-                    </div>
-                </div>
-                <div class="text-content">
-                    <h2>Impulsados por un sueño de revitalizar Chiclayo</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. 
-                        Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique.
-                    </p>
-                    <p>
-                        Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam.
-                    </p>
-                    <a href="menu.html" class="btn-dark-rect">Ordena en línea ↓</a>
-                </div>
+        <main>
+            <div class="history-hero">
+                <h1>Nuestra Historia</h1>
             </div>
-        </section>
 
-        <section id="mision" class="section-block bg-beige">
-            <div class="split-container">
-                <div class="text-content">
-                    <span class="subtitle-small">Nuestra Misión</span>
-                    <h2>Sembrando esperanza en el corazón de Chiclayo</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. 
-                        Duis vulputate commodo lectus, ac blandit elit tincidunt id.
-                    </p>
-                    <a href="menu.html" class="btn-dark-rect">Ordena en línea ↓</a>
-                </div>
-                <div class="single-image-box">
-                    <div class="square-frame">
-                        <img src="img/historia/mision.jpg" alt="Misión">
+            <nav class="history-nav">
+                <ul>
+                    <li><a href="#sobre-nosotros" class="h-link active">Sobre Nosotros</a></li>
+                    <li><a href="#mision" class="h-link">Nuestra Misión</a></li>
+                    <li><a href="#proposito" class="h-link">Nuestro Propósito</a></li>
+                    <li><a href="#vision" class="h-link">Nuestra Visión</a></li>
+                    <li><a href="#valores" class="h-link">Nuestros Valores</a></li>
+                </ul>
+            </nav>
+
+            <section id="sobre-nosotros" class="section-block bg-white">
+                <div class="split-container">
+                    <div class="double-image-box">
+                        <div class="tall-frame">
+                            <img src="img/historia/foto1.jpg" alt="Local antiguo">
+                        </div>
+                        <div class="tall-frame">
+                            <img src="img/historia/foto2.png" alt="Local actual">
+                        </div>
+                    </div>
+                    <div class="text-content">
+                        <h2>Impulsados por un sueño de revitalizar Chiclayo</h2>
+                        <p>Café Jalua nació de una idea simple pero poderosa: crear un espacio donde cada visita sea una experiencia memorable. Más que una cafetería, somos el living room de Chiclayo, donde estudiantes encuentran inspiración, amigos compitan risas, y familias crean recuerdos alrededor de nuestras mesas de madera rústica.</p>
+                        <p>Nuestra carta de postres es un viaje por los sabores del norte peruano: alfajores rellenos de manjarblanco, tortas tres leches con toques de lucuma, y brownies que derriten el corazón. Cada creación pasa por las manos expertas de nuestros pasteleros, quienes combinan tradición con innovación para sorprenderte en cada visita.</p>
+                        <a href="menu.html" class="btn-dark-rect">Ordena en línea ↓</a>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="proposito" class="section-block bg-white">
-            <div class="split-container">
-                <div class="single-image-box">
-                    <div class="square-frame">
-                        <img src="img/historia/proposito.jpg" alt="Propósito">
+            <section id="mision" class="section-block bg-beige">
+                <div class="split-container">
+                    <div class="text-content">
+                        <span class="subtitle-small">Nuestra Misión</span>
+                        <h2>Sembrando esperanza en el corazón de Chiclayo</h2>
+                        <p>En JeaLua, nuestra misión va más allá de servir café: cultivamos oportunidades y transformamos vidas. A través de nuestra cafetería, brindamos formación integral a jóvenes de nuestra comunidad, enseñándoles no solo el arte del buen café, sino también valores de responsabilidad, trabajo en equipo y liderazgo.</p>
+                        <a href="menu.html" class="btn-dark-rect">Ordena en línea ↓</a>
+                    </div>
+                    <div class="single-image-box">
+                        <div class="square-frame">
+                            <img src="img/historia/mision.jpg" alt="Misión">
+                        </div>
                     </div>
                 </div>
-                <div class="text-content">
-                    <span class="subtitle-small">Nuestro Propósito</span>
-                    <h2>Sembrando esperanza en el corazón de Chiclayo</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. 
-                        Duis vulputate commodo lectus, ac blandit elit tincidunt id.
-                    </p>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="vision" class="section-block bg-beige">
-            <div class="split-container">
-                <div class="text-content">
-                    <span class="subtitle-small">Nuestra Visión</span>
-                    <h2>Sembrando esperanza en el corazón de Chiclayo</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. 
-                        Duis vulputate commodo lectus, ac blandit elit tincidunt id.
-                    </p>
-                </div>
-                <div class="single-image-box">
-                    <div class="square-frame">
-                        <img src="img/historia/vision.jpg" alt="Visión">
+            <section id="proposito" class="section-block bg-white">
+                <div class="split-container">
+                    <div class="single-image-box">
+                        <div class="square-frame">
+                            <img src="img/historia/proposito.jpg" alt="Propósito">
+                        </div>
+                    </div>
+                    <div class="text-content">
+                        <span class="subtitle-small">Nuestro Propósito</span>
+                        <h2>Sembrando esperanza en el corazón de Chiclayo</h2>
+                        <p>Nuestro propósito es claro: utilizar el café como vehículo de transformación social. Creemos que cada grano cultivado con esmero puede convertirse en una oportunidad para jóvenes que buscan un futuro mejor.</p>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="valores" class="section-block bg-white">
-            <div class="values-container">
-                <div class="values-intro">
-                    <h2>Valores</h2>
-                    <h3>Comunidad</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.</p>
+            <section id="vision" class="section-block bg-beige">
+                <div class="split-container">
+                    <div class="text-content">
+                        <span class="subtitle-small">Nuestra Visión</span>
+                        <h2>Sembrando esperanza en el corazón de Chiclayo</h2>
+                        <p>Aspiramos a ser reconocidos como la cafetería líder en Chiclayo que demuestra que el éxito comercial y el impacto social pueden caminar de la mano. Visualizamos un futuro donde nuestro modelo sea replicado en otras ciudades, ampliando el círculo de oportunidades para más jóvenes.</p>
+                    </div>
+                    <div class="single-image-box">
+                        <div class="square-frame">
+                            <img src="img/historia/vision.jpg" alt="Visión">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="valores" class="section-block bg-white">
+                <div class="values-container">
+                    <div class="values-intro">
+                        <h2>Valores</h2>
+                        <h3>Comunidad</h3>
+                        <p>Creemos en el poder transformador de la comunidad. Cada persona que entra a JeaLua forma parte de nuestra familia extendida, y juntos construimos un espacio de crecimiento mutuo.</p>
+                    </div>
+                    
+                    <div class="values-bars">
+                        <div class="value-bar">
+                            <h4>Pasión</h4>
+                        </div>
+                        <div class="value-bar">
+                            <h4>Integridad</h4>
+                        </div>
+                        <div class="value-bar">
+                            <h4>Calidad</h4>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="values-bars">
-                    <div class="value-bar">
-                        <h4>Pasión</h4>
-                    </div>
-                    <div class="value-bar">
-                        <h4>Integridad</h4>
-                    </div>
-                    <div class="value-bar">
-                        <h4>Calidad</h4>
-                    </div>
+                <div class="coffee-beans">
+                    <img src="img/bean_border-1.png" alt="Granos">
                 </div>
-            </div>
-            
-            <div class="coffee-beans">
-                <img src="img/bean_border-1.png" alt="Granos">
-            </div>
-        </section>
+            </section>
 
-    </main>
+        </main>
 
-    <footer class="site-footer">
-                <a href="#top" class="back-to-top" aria-label="Volver al inicio">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
-                </a>
-                <div class="footer-content">
-                    <div class="footer-col logo-col">
-                        <div class="footer-logo-box">
-                            <img src="img/logo.jpg" alt="Logo JeaLua" class="footer-logo-img">
+        <footer class="site-footer">
+                    <a href="#top" class="back-to-top" aria-label="Volver al inicio">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+                    </a>
+
+                    <div class="footer-content">
+                        <div class="footer-col logo-col">
+                            <div class="footer-logo-box">
+                                <img src="img/logo.jpg" alt="Logo JeaLua" class="footer-logo-img">
+                            </div>
+                        </div>
+
+                        <div class="footer-col info-col">
+                            <h3>Ubicación</h3>
+                            <p class="address">
+                                <span class="icon-pin">📍</span> JeaLua - Av. Libertad<br>
+                                401, Chiclayo 14001,<br>
+                                Perú
+                            </p>
+                            
+                            <div class="footer-socials">
+                                <a href="https://wa.me/51986604448" target="_blank" aria-label="WhatsApp">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                                </a>
+                                <a href="https://www.facebook.com/cremoladasjealua" target="_blank" aria-label="Facebook">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                                </a>
+                                <a href="https://www.instagram.com/jealua/?hl=es" target="_blank" aria-label="Instagram">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.585-.069 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.26-.148-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.85s.012-3.585.07-4.85c.148-3.204 1.671-4.771 4.919-4.919 1.266-.057 1.645-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.36-.2 6.78-2.618 6.98-6.98.058-1.281.072-1.689.072-4.948 0-3.259-.014-3.667-.072-4.947-.2-4.36-2.618-6.78-6.98-6.98-1.28-.058-1.689-.072-4.947-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                </a>
+                                <a href="https://linktr.ee/jealua" target="_blank" aria-label="Linktree">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M13.7364 5.85276L13.1264 5.24276C12.5014 4.61776 11.4989 4.61776 10.8739 5.24276L10.2639 5.85276C9.6389 6.47776 9.6389 7.48026 10.2639 8.10526L10.8739 8.71526C11.4989 9.34026 12.5014 9.34026 13.1264 8.71526L13.7364 8.10526C14.3614 7.48026 14.3614 6.47776 13.7364 5.85276ZM10.2639 15.8528L10.8739 16.4628C11.4989 17.0878 12.5014 17.0878 13.1264 16.4628L13.7364 15.8528C14.3614 15.2278 14.3614 14.2253 13.7364 13.6003L13.1264 12.9903C12.5014 12.3653 11.4989 12.3653 10.8739 12.9903L10.2639 13.6003C9.6389 14.2253 9.6389 15.2278 10.2639 15.8528ZM6.2639 11.8528L6.8739 12.4628C7.4989 13.0878 8.5014 13.0878 9.1264 12.4628L9.7364 11.8528C10.3614 11.2278 10.3614 10.2253 9.7364 9.60026L9.1264 8.99026C8.5014 8.36526 7.4989 8.36526 6.8739 8.99026L6.2639 9.60026C5.6389 10.2253 5.6389 11.2278 6.2639 11.8528ZM17.7364 11.8528L18.3464 12.4628C18.9714 13.0878 19.9739 13.0878 20.5989 12.4628L21.2089 11.8528C21.8339 11.2278 21.8339 10.2253 21.2089 9.60026L20.5989 8.99026C19.9739 8.36526 18.9714 8.36526 18.3464 8.99026L17.7364 9.60026C17.1114 10.2253 17.1114 11.2278 17.7364 11.8528Z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="footer-col links-col">
+                            <h3>Inicio</h3>
+                            <ul class="footer-links">
+                                <li><a href="nuestrahistoria.html">Nuestra Historia</a></li>
+                                <li><a href="nuestrahistoria.html#mision">Misión</a></li>
+                                <li><a href="nuestrahistoria.html#vision">Visión</a></li>
+                                <li><a href="nuestrahistoria.html#valores">Valores</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer-col links-col">
+                            <h3>Realizar pedido en línea</h3>
+                            <ul class="footer-links">
+                                <li><a href="menu.html">Menú completo</a></li>
+                                <li><a href="nuestrahistoria.html">Sobre Nosotros</a></li>
+                                <li><a href="contacto.html">Contacto</a></li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="footer-col info-col">
-                        <h3>Ubicación</h3>
-                        <p class="address">
-                            <span class="icon-pin">📍</span> Jealua - Av. Libertad<br>
-                            401, Chiclayo 14001,<br>
-                            Perú
+
+                    <div class="footer-bottom">
+                        <p>
+                            &copy;2025. JeaLua. Todos los derechos reservados. Cualquier duplicación no autorizada del contenido aquí incluido resultará en acciones legales. Política de privacidad | Condiciones de uso | Política de reembolso.
                         </p>
-                        <div class="footer-socials">
-                            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.585-.069 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.26-.148-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.85s.012-3.585.07-4.85c.148-3.204 1.671-4.771 4.919-4.919 1.266-.057 1.645-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.36-.2 6.78-2.618 6.98-6.98.058-1.281.072-1.689.072-4.948 0-3.259-.014-3.667-.072-4.947-.2-4.36-2.618-6.78-6.98-6.98-1.28-.058-1.689-.072-4.947-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-                            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg></a>
-                            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg></a>
-                            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
-                        </div>
                     </div>
-                    <div class="footer-col links-col">
-                        <h3>Inicio</h3>
-                        <ul class="footer-links">
-                            <li><a href="#">Nuestra Historia</a></li>
-                            <li><a href="#">Misión</a></li>
-                            <li><a href="#">Visión</a></li>
-                            <li><a href="#">Valores</a></li>
-                            <li><a href="#">Reservar</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col links-col">
-                        <h3>Realizar pedido en línea</h3>
-                        <ul class="footer-links">
-                            <li><a href="#">Menú completo</a></li>
-                            <li><a href="#">Sobre Nosotros</a></li>
-                            <li><a href="#">Contacto</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <p>
-                        &copy;2025. Jealua. Todos los derechos reservados. Cualquier duplicación no autorizada del contenido aquí incluido resultará en acciones legales. Política de privacidad | Condiciones de uso | Política de reembolso.
-                    </p>
-                </div>
-            </footer>   
+                </footer>
 
-    <script src="scripts/script.js"></script>
-</body>
+        <script src="scripts/script.js"></script>
+    </body>
 </html>
