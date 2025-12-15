@@ -431,28 +431,77 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // --- FORMULARIO CONTACTO ---
     const contactForm = document.getElementById('contactForm');
+    
     if (contactForm) {
-        const messageDiv = document.getElementById('formMessage');
+        // Asegúrate de tener un <div id="formMessage"></div> en tu HTML para los mensajes
+        let messageDiv = document.getElementById('formMessage');
+        
+        // Si no existe el div de mensaje, lo creamos dinámicamente debajo del botón
+        if (!messageDiv) {
+            messageDiv = document.createElement('div');
+            messageDiv.id = 'formMessage';
+            messageDiv.style.marginTop = '15px';
+            messageDiv.style.fontWeight = '600';
+            contactForm.appendChild(messageDiv);
+        }
+
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            const inputs = contactForm.querySelectorAll('input');
-            let valid = true;
-            inputs.forEach(i => {
-                if(i.value.trim() === '') valid = false;
-            });
             
-            if(!valid) {
+            // 1. Obtener campos
+            const inputs = contactForm.querySelectorAll('input, textarea');
+            const phoneInput = document.getElementById('telefono'); // Busca por ID "telefono"
+            
+            let isValid = true;
+            let errorText = "Por favor, completa todos los campos.";
+
+            // 2. Limpiar errores visuales previos
+            inputs.forEach(i => i.style.borderBottomColor = '#ccc');
+            messageDiv.style.display = 'none';
+
+            // 3. Validar Campos Vacíos
+            inputs.forEach(i => {
+                if(i.value.trim() === '') {
+                    i.style.borderBottomColor = '#d9534f'; // Rojo
+                    isValid = false;
+                }
+            });
+
+            // 4. Validación Específica: TELÉFONO (9 dígitos numéricos)
+            if (phoneInput && phoneInput.value.trim() !== '') {
+                const phoneVal = phoneInput.value.trim();
+                const phoneRegex = /^\d{9}$/; // Expresión regular: Exactamente 9 números
+
+                if (!phoneRegex.test(phoneVal)) {
+                    phoneInput.style.borderBottomColor = '#d9534f';
+                    isValid = false;
+                    errorText = "El teléfono debe tener 9 números válidos.";
+                }
+            }
+
+            // 5. Mostrar Error si falla algo
+            if(!isValid) {
                 messageDiv.style.color = '#d9534f';
-                messageDiv.textContent = 'Por favor, completa todos los campos.';
-                return;
+                messageDiv.textContent = errorText;
+                messageDiv.style.display = 'block';
+                return; // Detiene el envío
             }
             
+            // 6. Éxito (Simulación)
             messageDiv.style.color = '#28a745';
-            messageDiv.textContent = 'Enviando...';
+            messageDiv.textContent = 'Enviando mensaje...';
+            messageDiv.style.display = 'block';
+            
+            // Simular espera de red
             setTimeout(() => {
-                messageDiv.textContent = '¡Mensaje enviado con éxito!';
+                messageDiv.textContent = '¡Gracias! Tu mensaje ha sido enviado correctamente.';
                 contactForm.reset();
-            }, 1000);
+                
+                // Borrar mensaje a los 4 segundos
+                setTimeout(() => {
+                    messageDiv.style.display = 'none';
+                }, 4000);
+            }, 1500);
         });
     }
 
